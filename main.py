@@ -239,4 +239,5 @@ if __name__ == '__main__':
             loss = loss_fn(output, ground_truth)
             result.append(loss.item())
             print('\033[31mloss of sensor %d/%d:\033[0m'%(i+1,n_sensors),loss.item())
-    print('\033[32m',np.mean(result),'\033[0m')
+    if (multiGPU and local_rank == 0) or not multiGPU:
+        print('\033[32m',np.mean(result),'\033[0m')
