@@ -32,12 +32,12 @@ if __name__ == '__main__':
     parser.add_argument('-P', '--positional_encoding', type=str, default='sinusoidal', help='zero,sin,sinusoidal')
     parser.add_argument('-p', '--predict_window', type=int, default=30)
     parser.add_argument('-s', '--save_path', type=str, default='save')
-    parser.add_argument('-t', '--transformer_layers', type=int, default=6)
+    parser.add_argument('-L', '--transformer_layers', type=int, default=8)
     parser.add_argument('-V', '--dont_validate', action='store_true')
     parser.add_argument('--step_size', type=int, default=10)
     parser.add_argument('--stride', type=int, default=1)
-    parser.add_argument('--train_ratio', type=float, default=0.7)
-    parser.add_argument('--validate_ratio', type=float, default=0.1)
+    parser.add_argument('-t','--train_ratio', type=float, default=0.6)
+    parser.add_argument('-v','--validate_ratio', type=float, default=0.2)
     args = parser.parse_args()
 
     use_cuda = args.gpu
